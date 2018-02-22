@@ -19,7 +19,7 @@ alias la="ls -alh --color=auto"
 alias mg="mg -n"
 #alias temacsnoconf="emacs -q -nw"
 #alias term_emacs="emacsclient -t"
-alias nano="nano -lm"
+alias nano="/usr/bin/nano -lmx"
 
 # Killed as of 2018/01/05
 #switch kblayouts
@@ -31,5 +31,8 @@ alias nano="nano -lm"
 #alias weather_moon="curl wttr.in/Moon"
 #alias thermal_monitor="watch -n 1 -d sensors"
 
-alias mirror_sync_local="rsync -rtlvh --progress rsync://192.168.222.1/archlinux /srv/data/mirror"
-alias mirror_sync_extern="rsync -rtlvh --progress --bwlimit=1000 rsync://mirror.tyrolyean.net/archlinux /srv/data/mirror"
+alias mirror_sync_local="rsync -rtlvh --progress --delete-after rsync://192.168.222.1/archlinux /srv/data/mirror"
+alias mirror_sync_extern="rsync -rtlvh --progress --delete-after --bwlimit=1000 rsync://mirror.tyrolyean.net/archlinux /srv/data/mirror"
+alias music_sync_extern="rsync -rtlvh --progress rsync://www.tyrolyean.net/flac /home/tyrolyean/music"
+alias music_sync_intern="rsync -rtlvh --progress rsync://192.168.222.1/flac /home/tyrolyean/music"
+
