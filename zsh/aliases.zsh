@@ -20,6 +20,8 @@ alias mg="mg -n"
 #alias temacsnoconf="emacs -q -nw"
 #alias term_emacs="emacsclient -t"
 alias nano="/usr/bin/nano -lmx"
+alias bc="/usr/bin/bc -l"
+alias listmeta="/usr/bin/metaflac --list"
 
 # Killed as of 2018/01/05
 #switch kblayouts
