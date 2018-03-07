@@ -8,7 +8,8 @@ setopt histignorealldups sharehistory
 
 alias extern
 source ~/.config/zsh/aliases.zsh
-
+source ~/.config/zsh/functions.zsh
+set +x
 # Use emacs keybindings even if our EDITOR is set to vi
 bindkey -e
 bindkey "^[[3~" delete-char
@@ -41,13 +42,20 @@ zstyle ':completion:*' verbose true
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
+# I don't know why the fuck this doesn't work,
+# but for me, it doesn't really...
 EDITOR="vim"
 VISUAL="vim"
 
 # Echo debug at start
-echo -e "shell start as \e[31m$(whoami)\e[0m@\e[36m$(hostname)\e[0m --> $(date --rfc-3339=seconds)"
-PROMPT="[%F{red}%n%f@%F{cyan}%m%f %1~]%(#.#.$) "
-RPROMPT='[%F{yellow}%?%f]'
+echo -e "shell start at $(date --rfc-3339=seconds)"
+
+# Old custom prompts. now delegated to the functions.zsh file
+#PROMPT="[%F{red}%n%f@%F{cyan}%m%f %1~]%(#.#.$) " $shorthost
+#PROMPT="[%F{red}%n%f@%f %1~]%(#.#.$) "
+#RPROMPT='[%F{yellow}%?%f]'
+
+# Set window title accordingly
 case $TERM in
   (*xterm* | rxvt)
 
