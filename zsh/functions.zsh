@@ -26,39 +26,42 @@
 # returns the given string in color.
 # the color is calculated from a "hash".
 color_from_hash () {
-    local host_chars hash colors
-    host_chars=${(s::)1}
-    colors=(
-        $fg[cyan]    $fg_bold[green]
-        $fg[white]   $fg_bold[red]
-        $fg[yellow]  $fg_bold[blue]
-        $fg[magenta] $fg_bold[magenta]
-        $fg[blue]    $fg_bold[yellow]
-        $fg[red]     $fg_bold[white]
-        $fg[green]   $fg_bold[cyan]
-    )
 
-    hash=0
+        local host_chars hash colors
+        host_chars=${(s::)1}
+        colors=(
+                $fg[cyan]    $fg_bold[green]
+                $fg[white]   $fg_bold[red]
+                $fg[yellow]  $fg_bold[blue]
+                $fg[magenta] $fg_bold[magenta]
+                $fg[blue]    $fg_bold[yellow]
+                $fg[red]     $fg_bold[white]
+                $fg[green]   $fg_bold[cyan]
+        )
+
+        hash=0
     
-    for c in $host_chars; do
-        hash=$(( $hash ^ 36#$c ))
-    done
-    hash=$(( ( $hash % $#colors ) + 1 ))
-
-    echo -n "%{$colors[$hash]%}$1%{$reset_color%}"
+        for c in $host_chars; do
+                hash=$(( $hash ^ 36#$c ))
+        done
+        hash=$(( ( $hash % $#colors ) + 1 ))
+        
+        echo -n "%{$colors[$hash]%}$1%{$reset_color%}"
 }
 
 # This is called by the zsh because of the hook set
 # in the definitions file
 prompt_precmd () {
 
-    local return_code="%(?..%{$fg_bold[red]%}%? ↵%{$reset_color%})"
-    local shorthost=$(color_from_hash $(hostname -s))
-    local usrnme=$(color_from_hash $(whoami))
-    setopt prompt_subst
+        local return_code="%(?..%{$fg_bold[red]%}%? ↵%{$reset_color%})"
+        local shorthost=$(color_from_hash $(hostname -s))
+        local usrnme=$(color_from_hash $(whoami))
+        local tty_colorless=$( echo ${$(tty)#"/dev/"} | tr -d / )
+        local tty_col=$(color_from_hash "$tty_colorless" )
+        setopt prompt_subst
 
     
-    PROMPT="[%F{red}${usrnme}%f@${shorthost}%f %1~]%(#.#.$) "
-    RPROMPT='[%F{yellow}%?%f]'
+        PROMPT="%F{red}${usrnme}%f@${shorthost}%f@${tty_col} %3~ > "
+        RPROMPT='[%F{yellow}%?%f]'
 }
 

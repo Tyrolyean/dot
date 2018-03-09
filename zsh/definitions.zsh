@@ -51,11 +51,12 @@ promptinit
 #### KEYBINDS
 ##
 
-# Use emacs keybindings even if our EDITOR is set to vi
 bindkey -e
 bindkey "^[[3~" delete-char
 bindkey "^[[A" history-beginning-search-backward
 bindkey "^[[B" history-beginning-search-forward
+bindkey "^[[1;5C" forward-word
+bindkey "^[[1;5D" backward-word
 
 # Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
 HISTSIZE=10000
