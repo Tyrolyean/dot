@@ -1,8 +1,6 @@
-# Welcome to Rock Bottom
 
-These are the dot files used on all rock bottom devices.
+These are dot files.
 Please don't mistreat them.
 
 Thank You
 
-Rock Bottom Operator
