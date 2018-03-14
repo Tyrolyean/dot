@@ -13,7 +13,7 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 8
+font pango:Hack 8
 
 exec xrdb > ~/.Xresources &
 exec xfce4-power-manager &
@@ -161,7 +161,6 @@ bar {
 
 exec --no-startup-id nm-applet
 exec --no-startup-id synergys
-exec --no-startup-id xsetroot -solid "#333333"
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
@@ -183,9 +182,10 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 exec xmodmap -e "keycode 66 = Shift_L"
 
-#exec setxkbmap us altgr-intl -option ctrl:nocaps
-
 # Lockscreen
 bindsym $mod+l exec "i3lock -c 000000"
 bindsym $mod+Shift+s exec systemctl suspend
 bindsym $mod+Shift+p exec poweroff
+
+# Background
+exec feh --bg-scale $HOME/pictures/wallpaper/$(ls $HOME/pictures/wallpaper/ |sort -R |tail -$N | sed -n 1p)
