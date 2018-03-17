@@ -44,10 +44,3 @@ alias la="ls -alh --color=auto"
 alias nano="/usr/bin/nano -lmx"
 alias bc="/usr/bin/bc -l"
 alias listmeta="/usr/bin/metaflac --list"
-
-# internal syncing commands
-alias mirror_sync_local="rsync -rtlvh --progress --delete-after rsync://192.168.222.1/archlinux /srv/data/mirror"
-alias mirror_sync_extern="rsync -rtlvh --progress --delete-after --bwlimit=1000 rsync://mirror.tyrolyean.net/archlinux /srv/data/mirror"
-alias music_sync_extern="rsync -rtlvh --progress rsync://www.tyrolyean.net/flac /home/tyrolyean/music"
-alias music_sync_intern="rsync -rtlvh --progress rsync://192.168.222.1/flac /home/tyrolyean/music"
-
