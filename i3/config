@@ -160,7 +160,6 @@ bar {
 }
 
 exec --no-startup-id nm-applet
-exec --no-startup-id synergys
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
