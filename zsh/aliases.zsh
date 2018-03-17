@@ -45,9 +45,9 @@ alias nano="/usr/bin/nano -lmx"
 alias bc="/usr/bin/bc -l"
 alias listmeta="/usr/bin/metaflac --list"
 
-#alias em="emacs -nw"
-alias mg="mg -n"
-#alias temacsnoconf="emacs -q -nw"
-#alias term_emacs="emacsclient -t"
-alias nano="nano -lm"
+# internal syncing commands
+alias mirror_sync_local="rsync -rtlvh --progress --delete-after rsync://192.168.222.1/archlinux /srv/data/mirror"
+alias mirror_sync_extern="rsync -rtlvh --progress --delete-after --bwlimit=1000 rsync://mirror.tyrolyean.net/archlinux /srv/data/mirror"
+alias music_sync_extern="rsync -rtlvh --progress rsync://www.tyrolyean.net/flac /home/tyrolyean/music"
+alias music_sync_intern="rsync -rtlvh --progress rsync://192.168.222.1/flac /home/tyrolyean/music"
 
