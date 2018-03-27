@@ -23,7 +23,7 @@
 ###############################################################################
 ###############################################################################
 
-# I don't understand why this is here...
+# Apparently this makes other aliases work with sudo... why though?
 alias sudo="sudo "
 
 # safer commands with more output. 
