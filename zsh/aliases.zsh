@@ -40,7 +40,10 @@ alias ls="ls -Fh --color=auto"
 alias ll="ls -lFh --color=auto"
 alias la="ls -alh --color=auto"
 
+# Fancy colors everywhere
+alias less="/usr/bin/less -R"
+
 # Information overrides 
-alias nano="/usr/bin/nano -lmx"
+alias nano="nano -lmx"
 alias bc="/usr/bin/bc -l"
 alias listmeta="/usr/bin/metaflac --list"
