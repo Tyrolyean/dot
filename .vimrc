@@ -1,12 +1,8 @@
-set runtimepath+=/var/dot/.vim_runtime
+set number
+set colorcolumn=80
 
-source /var/dot/.vim_runtime/vimrcs/basic.vim
-source /var/dot/.vim_runtime/vimrcs/filetypes.vim
-source /var/dot/.vim_runtime/vimrcs/plugins_config.vim
-source /var/dot/.vim_runtime/vimrcs/extended.vim
-source /var/dot/.vim_runtime/vimrcs/custom.vim
+syntax on
 
-try
-source /var/dot/.vim_runtime/my_configs.vim
-catch
-endtry
+set expandtab
+set shiftwidth=8
+set softtabstop=8
