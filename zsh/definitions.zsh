@@ -90,6 +90,10 @@ EDITOR="vim"
 VISUAL="vim"
 setopt histignorealldups sharehistory
 
+# If no x11 exists this is pretty useful...
+PINENTRY_BINARY="/usr/bin/pinentry-curses"
+GPG_TTY=$(tty)
+export GPG_TTY
 
 ##
 #### THINGS SO IT LOOKS NOT SO SHITTY
