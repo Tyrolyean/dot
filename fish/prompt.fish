@@ -6,8 +6,13 @@
 ################################################################################
 ################################################################################
 
+# Define the pwd length for each directory except .
+set -x fish_prompt_pwd_dir_length 6
+
 # Function executed when the prompt is rendered
 function fish_prompt
+
+	# Set environment variables to desired values
 	
 	# output the current user
 	set_color_term (color_from_string (whoami))
@@ -24,33 +29,9 @@ function fish_prompt
 	echo -n (tty | string replace "/dev/" "" | string replace "/" "" )
 	set_color_term normal
 	echo -n " "
-	set cwd_int (pwd | string split "/")
 	
-	set cwd $cwd_int[2..(count $cwd_int)]
 
-	set dircnt (count $cwd)
-
-	if [ $dircnt -lt 1 ]
-		set dircnt $dircnt + 1
-	end
-
-	set dirout ""
-	set MAX_DIRCNT 3
-
-	if [ $dircnt -le $MAX_DIRCNT ]
-		# Print all directories
-		
-		set dirout (pwd)
-
-	else
-		for i in $cwd[(math $dircnt - $MAX_DIRCNT + 1)..$dircnt]
-			set dirout $dirout$i/
-		end
-
-
-	end
-
-	echo  -n $dirout "> "
+	echo  -n (prompt_pwd) "> "
 
 end
 
