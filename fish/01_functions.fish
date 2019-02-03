@@ -30,6 +30,8 @@ function color_from_string
 end
 
 function log
-	echo -n "[" (date -Iseconds) "] "
-	echo $argv
+	if status --is-interactive
+		echo -n "[" (date -Iseconds) "] "
+		echo $argv
+	end
 end
