@@ -53,6 +53,9 @@ function fish_right_prompt
 		echo -n $progval
 		ty_set_color_term normal
 		
+		echo "|"
+		set duration (echo "$CMD_DURATION 1000" | awk '{printf "%.3fs", $1 / $2}')
+		echo $duration
 		echo "]"
 
 	end

@@ -52,6 +52,7 @@ bind \cr reverse_history_search
 
 set -x VISUAL vim
 set -x EDITOR vim
+set -x PDFVIEWER evince
 
 # Make less look better
 set -x LESS "-R"
