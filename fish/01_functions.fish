@@ -10,7 +10,7 @@
 ################################################################################
 
 # This sets the color to a desired value if the script is executed in a shell
-function set_color_term
+function ty_set_color_term
 
 	if not isatty 1
 		set_color $argv
@@ -19,9 +19,9 @@ end
 
 # Hashes the given string and creates a color from it in the maximum possible
 # color space.
-function color_from_string
+function ty_color_from_string
 	if set -q COLOR_HASH_PROG
-		set colval (echo -n $argv | eval $COLOR_HASH_PROG - |\
+		set colval (echo -En $argv | $COLOR_HASH_PROG - |\
 			string sub -s 1 -l 6  )
 		echo $colval
 	else

@@ -41,11 +41,12 @@ alias ll="ls -lFh --color=auto"
 alias la="ls -alh --color=auto"
 
 # Fancy colors everywhere
-alias less="/usr/bin/less -R"
+alias less="less -R"
 
 # Information overrides 
 alias nano="nano -lmx"
-alias bc="/usr/bin/bc -l"
-alias listmeta="/usr/bin/metaflac --list"
-alias mpv="/usr/bin/mpv --no-audio-display"
-alias dd="/usr/bin/dd status=progress"
+alias bc="bc -l"
+alias mpv="mpv --no-audio-display"
+alias dd="dd status=progress"
+
+

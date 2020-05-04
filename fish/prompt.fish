@@ -15,19 +15,19 @@ function fish_prompt
 	# Set environment variables to desired values
 	
 	# output the current user
-	set_color_term (color_from_string (whoami))
+	ty_set_color_term (ty_color_from_string (whoami))
 	echo -n (whoami)
-	set_color_term normal
+	ty_set_color_term normal
 	echo -n "@"
 	# output the current hostname
-	set_color_term (color_from_string (hostname))
+	ty_set_color_term (ty_color_from_string (hostname))
 	echo -n (hostname)
-	set_color_term normal
+	ty_set_color_term normal
 	echo -n "@"
 	# output the current tty device
-	set_color_term (color_from_string (tty))
+	ty_set_color_term (ty_color_from_string (tty))
 	echo -n (tty | string replace "/dev/" "" | string replace "/" "" )
-	set_color_term normal
+	ty_set_color_term normal
 	echo -n " "
 	
 
@@ -45,13 +45,13 @@ function fish_right_prompt
 		echo -n "["
 		
 		if [ $progval != 0 ]
-			set_color_term red
+			ty_set_color_term red
 		else
-			set_color_term green
+			ty_set_color_term green
 
 		end
 		echo -n $progval
-		set_color_term normal
+		ty_set_color_term normal
 		
 		echo "]"
 

@@ -1,4 +1,4 @@
-################################################################################
+###############################################################################
 ################################################################################
 ## Copyright 2018 tyrolyean. Licensed under the Apache License Version 2.     ##
 ##                                                                            ##
@@ -75,3 +75,7 @@ else if isatty 1
 	set -x LESS_TERMCAP_ue \e'[0m'      # stop underline
 	set -x LESS_TERMCAP_us \e'[1;4;31m' # start underline
 end
+
+set PATH $PATH /home/tyrolyean/.cargo/bin
+
+log "Rewrote path"

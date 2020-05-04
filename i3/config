@@ -9,6 +9,8 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
+
+
 set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -180,6 +182,7 @@ bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 exec xmodmap -e "keycode 66 = Shift_L"
+exec redshift -l 47.32355:11.64388
 
 # Lockscreen
 bindsym $mod+l exec "i3lock -c 000000"

@@ -119,4 +119,5 @@ esac
 # Set the prompt hook
 add-zsh-hook precmd prompt_precmd
 
-
+set nobackup
+set nowritebackup
