@@ -9,7 +9,8 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-
+#exec xrandr --output DVI-D-1 --primary --left-of DP-1
+#exec xrandr --output HDMI-1 --left-of DVI-D-1
 
 set $mod Mod4
 
@@ -35,7 +36,7 @@ exec xfce4-power-manager &
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec termite
+bindsym $mod+Return exec alacritty
 
 # kill focused window
 bindsym $mod+Shift+q kill
