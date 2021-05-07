@@ -25,6 +25,7 @@ alias la="ls -alh --color=auto"
 
 # Information overrides     
 alias nano="nano -lmx"    
+alias ip="ip --color=auto"    
 alias bc="/usr/bin/bc -l"    
 alias listmeta="/usr/bin/metaflac --list"    
 alias dd="/usr/bin/dd status=progress"
